@@ -1,0 +1,23 @@
+{% extends 'rango/base.html' %}
+{% load static %}
+
+{% block title_block %}
+	{% if category %}
+		{{ category.name }}
+	{% else %}
+		Unknown Category
+	{% endif %}
+{% endblock %}
+
+{% block body_block %}
+	<h1>Rango says...</h1>
+	<div>
+		Here is the about page <br />
+		<p>This page has been put together by {{ myname }}</p>
+	</div>
+
+	<div>
+	<img src="{% static 'images/rango.png' %}" alt="Picture of Rango"/>
+	<img src="{{ MEDIA_URL }}lion.jpg" alt="Picture of Lion"/>
+	</div>
+{% endblock %}
